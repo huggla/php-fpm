@@ -3,7 +3,7 @@ ARG DESTDIR="/php"
 
 FROM huggla/alpine as alpine
 
-ARG BUILDDEPS="autoconf dpkg-dev dpkg file g++ gcc libc-dev make pkgconf re2cargon2-dev coreutils curl-dev libedit-dev libsodium-dev libxml2-dev libressl-dev sqlite-dev"
+ARG BUILDDEPS="autoconf dpkg-dev dpkg file g++ gcc libc-dev make pkgconf re2c argon2-dev coreutils curl-dev libedit-dev libsodium-dev libxml2-dev libressl-dev sqlite-dev"
 ARG VERSION="7.3.2"
 ARG DOWNLOAD="https://secure.php.net/get/php-$VERSION.tar.xz/from/this/mirror"
 ARG CFLAGS="-fstack-protector-strong -fpic -fpie -O2"
