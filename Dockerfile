@@ -34,3 +34,9 @@ RUN apk add $BUILDDEPS \
  && scanelf --needed --nobanner --format '%n#p' --recursive /usr/local | tr ',' '\n' | sort -u | awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' \
  && pecl update-channels \
  && rm -rf /tmp/pear ~/.pearrc
+
+FROM huggla/busybox:$TAG as image
+
+ARG DESTDIR
+
+COPY --from=alpine $DESTDIR $DESTDIR
